@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/category_card.dart';
 import 'numbers_screen.dart';
+import 'colors_screen.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
@@ -16,14 +17,11 @@ class CategoriesScreen extends StatelessWidget {
       ),
       CategoryCardData(
         title: 'Colors',
-        subtitle: 'Coming soon',
+        subtitle: 'Learn colors',
         icon: Icons.palette_outlined,
-        onTap: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Colors: coming soon 👀')),
-          );
-        },
+        onTap: () => Navigator.pushNamed(context, ColorsScreen.routeName),
       ),
+      
       CategoryCardData(
         title: 'Animals',
         subtitle: 'Coming soon',
