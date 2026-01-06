@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/app_background.dart';
 import '../data/colors_data.dart';
 import '../widgets/color_tile.dart';
 
@@ -21,9 +22,15 @@ class _ColorsScreenState extends State<ColorsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Colors')),
-      body: Scrollbar(
+    return BackgroundScaffold(
+      backgroundAsset: 'assets/images/colors.png',
+      appBar: AppBar(
+  title: const Text(
+    'Colors',
+    style: TextStyle(color: Colors.blue),
+  ),
+),
+      child: Scrollbar(
         controller: _controller,
         thumbVisibility: true,
         interactive: true,
